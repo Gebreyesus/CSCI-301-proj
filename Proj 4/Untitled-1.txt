@@ -1,0 +1,89 @@
+//Name : Beteab Gebru
+//Class : CSCI301
+//Date : feb 21 2017
+//section 2
+//functions implementation page
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+#include <string>
+#include "cassert"
+#include "Concordance.h"
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+	// Modification member functions
+
+	List ::~List()      // Destructor deallocates memory nd first points to null in the end
+	{//===========================================================================public members and function
+		Word_Node* temp;
+
+		while (first != NULL)
+		{
+			temp = first;
+			first = first->forward;
+			delete temp;
+		}
+	}
+
+	void List::insert(const string& entry)
+	{//===========================================================================ublic members and function
+		Word_Node* prev;
+		if(!present(entry));//if not in list enter word node
+		{
+			if (first == NULL || entry < first->word)
+				first = get_node(entry, first);
+			else
+			{
+				prev = first;
+				while (prev->forward != NULL && prev->forward->word < entry)//looking for the right spot to plug node
+					prev = prev->forward;
+				prev->forward = get_node(entry, prev->forward);
+			}
+		}
+		prev = search_node(entry)
+			prev->count++;
+	}
+
+	Word_Node* List::search_node(string& target)
+   	{//========================================================================send back pointer to the node 
+			Word_Node* cursor,theNode
+			for (cursor = first; cursor != NULL && cursor->word != target; );
+			{
+				if (cursor->word == target)
+				{
+					theNode = cursor;
+					
+				}
+			}
+			
+		}
+//===========================================================================================Constant member functions
+	int List::length() const
+	{//========================================================================get length of l-list
+		Word_Node* cursor;
+		int count=0;
+		for (cursor = first; cursor != NULL; cursor = cursor->forward)
+			++count;
+		return count;
+	}
+		
+	bool List::present(const string& target) const
+	{//========================================================================report back if data is present
+		Word_Node* cursor;
+
+		for (cursor = first; cursor != NULL && cursor->word != target;cursor = cursor->forward);
+		return (cursor != NULL);
+	}
+	
+	Word_Node* List::get_node(const string& entry, Word_Node* link)
+	{//========================================================================stores word in a node
+		 Word_Node* temp;
+		//temp = new Word_Node*;
+		temp->word = entry;
+		temp->forward = link;
+		return temp;
+	}
+
+	

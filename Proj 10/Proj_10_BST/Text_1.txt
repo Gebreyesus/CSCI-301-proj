@@ -1,0 +1,6 @@
+
+Sorting is one of the most important
+operations in data processing. I will be 
+looking at three sorting algorithms,
+namely Merge_Sort, Quick_Sort, Bubble_Sort.
+I will be using random number 

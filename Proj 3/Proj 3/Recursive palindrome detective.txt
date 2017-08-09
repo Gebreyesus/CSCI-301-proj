@@ -1,0 +1,103 @@
+
+//Name: Beteab Gebru
+//Due Date : Feb 09 2017
+//CSCI 301: Section 02
+//CSCI ID : cs301154
+#include "stdafx.h"
+
+#include <iostream>                       // Provides istream and ostream
+#include <cassert>						 // Provides assert()
+#include <cstring>						//provides isalpha() to check if aplphabet
+#include <locale>
+
+using namespace std;
+
+void user_input(string&, int&);
+bool is_palindrome(string&, int&);
+bool myassert(string&, int&);
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+string sentence = " ";//global variable so that it can be acessed by the recursive isPalindrome() function;
+string *pointer = 
+int main()
+{
+	//string sentence = " ";
+	int sentence_length = 0;
+
+	user_input(sentence, sentence_length);
+
+	if (is_palindrome(sentence, sentence_length))
+	{
+		cout << "\n The Sentence entered is a palindrome" << endl;
+	}
+	else
+	{
+		cout << "\n The sentence entered doesnt appear to be a plaindrome" << endl;
+	}
+	cin >> sentence;
+}
+
+//-------------------------------------------------user_input() function retrieves user input
+void user_input(string& sentence, int& sentence_length)// getting appropriate inputs for the program
+{
+	cout << "Hello User: This is palindrome detection program: " << endl;
+	cout << "Enter your sentence to confirm if it is a palindrome\n";
+	getline(std::cin, sentence);	// getting the sentence
+	sentence_length = sentence.size();//getting snetence length
+
+	//ensures appropriate input
+	while (!myassert(sentence, sentence_length))
+	{
+		
+		cout << "no user input was captured or input was all non alphanumeric characters" << endl;
+		cout << "Enter your sentence again to confirm if palindrome\n";
+		getline(std::cin, sentence);
+		sentence_length = sentence.size();//retrieves & stores length of the user input
+	}
+	//this loop will convert all the characters into lower case
+	for (int x = 0; x <= sentence_length; x++)
+	{
+		char s = sentence[x];
+		sentence[x] = putchar(tolower(s));
+	}
+
+}
+
+//-------------------------------------------------myassert() function to ensure adequate input
+bool myassert(string& sentence, int& sentence_length)
+{
+	bool check = false;
+	if (sentence == " ")
+	{
+		return check;
+	}
+
+	for (int x = 0; x <= sentence_length; x++)
+	{
+		if (isalpha(sentence[x]))
+			check = true;
+	}
+	return check;
+}
+
+//-------------------------------------------------is_palindrome() function
+bool is_palindrome(string& sentence, int& sentence_length)
+{
+	bool Detect = true;//changes to false when !palindrome
+	int a = 0, b = sentence_length;//creating looping variables
+	//sentence[0]-->[size] are parsed while 
+	while ((a <= b) && (Detect == true))
+	{
+		while (!isalpha(sentence[a])) //to skip the non-alphabet for comparison from left side
+			a++;
+		while (!isalpha(sentence[b])) //to skip non-alphabet positions from right side
+			b--;
+		if (sentence[a] == sentence[b])
+		{
+			Detect = true;
+			a++; b--;
+		}
+		else
+			Detect = false;
+	}
+	return Detect;
+}

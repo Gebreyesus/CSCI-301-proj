@@ -1,0 +1,8 @@
+﻿  2nd try.cpp
+2nd try.obj : error LNK2019: unresolved external symbol "public: void __thiscall csci301_bag_1::Bag::insert(int const &)" (?insert@Bag@csci301_bag_1@@QAEXABH@Z) referenced in function _main
+2nd try.obj : error LNK2019: unresolved external symbol "public: void __thiscall csci301_bag_1::Bag::remove(int const &)" (?remove@Bag@csci301_bag_1@@QAEXABH@Z) referenced in function _main
+2nd try.obj : error LNK2019: unresolved external symbol "public: void __thiscall csci301_bag_1::Bag::operator+=(class csci301_bag_1::Bag const &)" (??YBag@csci301_bag_1@@QAEXABV01@@Z) referenced in function _main
+2nd try.obj : error LNK2019: unresolved external symbol "public: unsigned int __thiscall csci301_bag_1::Bag::occurrences(int const &)const " (?occurrences@Bag@csci301_bag_1@@QBEIABH@Z) referenced in function _main
+2nd try.obj : error LNK2019: unresolved external symbol "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl csci301_bag_1::operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class csci301_bag_1::Bag const &)" (??6csci301_bag_1@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AAV12@ABVBag@0@@Z) referenced in function _main
+2nd try.obj : error LNK2019: unresolved external symbol "class csci301_bag_1::Bag __cdecl csci301_bag_1::operator+(class csci301_bag_1::Bag const &,class csci301_bag_1::Bag const &)" (??Hcsci301_bag_1@@YA?AVBag@0@ABV10@0@Z) referenced in function _main
+C:\Users\betea\Desktop\PPPPPPPPPPPPPPPPPPPP\2nd try\Debug\2nd try.exe : fatal error LNK1120: 6 unresolved externals

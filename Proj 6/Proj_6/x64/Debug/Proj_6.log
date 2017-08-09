@@ -1,0 +1,4 @@
+﻿  Proj_6.cpp
+c:\users\betea\desktop\csci 301 proj\proj 6\proj_6\proj_6.cpp(71): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Proj_6.vcxproj -> C:\Users\betea\Desktop\CSCI 301 proj\Proj 6\Proj_6\x64\Debug\Proj_6.exe
+  Proj_6.vcxproj -> C:\Users\betea\Desktop\CSCI 301 proj\Proj 6\Proj_6\x64\Debug\Proj_6.pdb (Full PDB)

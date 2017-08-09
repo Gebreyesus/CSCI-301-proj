@@ -1,0 +1,6 @@
+design, implement, test, and document a 
+C++ program that reads an input file of 
+text and builds a concordance of the 
+words in the file, as in Projects 4 
+and 6. The program will also report the 
+number of distinct words in the file. 

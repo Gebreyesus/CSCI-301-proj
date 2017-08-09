@@ -1,0 +1,66 @@
+
+//Name: Beteab Gebru
+//Due Date : Feb 09 2017
+//CSCI 301: Section 02
+//CSCI ID : cs301154
+
+#include <cstdlib>                        // Provides size_t
+#include <iostream>                       // Provides istream and ostream
+#include <cassert>						 // Provides assert()
+
+using namespace std;
+
+void Prime_Factors(int,int);//prints out the prime number
+bool IsPrime(int);//checks if number is prime
+
+int main()
+{
+	int number,divisor=2;
+	cout << "enter positive integer numberber to find its prime factors" << endl;
+	cin >> number;
+
+	if (IsPrime(number))
+		cout << number << ": Is a prime number, therefore it doesnt have a factor apart from itself and 1" << endl;
+	else
+	{
+		cout << number << " Has the following prime factors : ";
+		Prime_Factors(number, divisor);
+	}
+	cin >> number;
+}
+
+//-----------------------------Prime_Factors()Function------------------------
+void Prime_Factors(int number, int divisor)
+{
+    int a=0;
+//cout << "recursive call number : " << a << endl;   //debuging line 
+ a++;
+		if (number % divisor == 0 && IsPrime(divisor))
+		{
+			cout << divisor << ",";
+			Prime_Factors(number / divisor, divisor+1);
+		}
+		else if (divisor < number)
+		{
+		   
+			Prime_Factors(number, divisor + 1);
+		}
+}
+
+
+//-----------------------------isPrime() Function----------------------
+bool IsPrime(int number)
+{
+	// Given:   number --> (integer > 1); it finds Number%2...all the way to..number%(number/2)
+	// Returns: true if number is prime
+	// false otherwise.
+	int i;
+	for (i = 2; i < (number / 2); i++)
+	{
+		if (number % i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}

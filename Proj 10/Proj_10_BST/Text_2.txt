@@ -1,0 +1,6 @@
+various balanced trees such as AVL tree, red-black tree, 
+B-tree, splay tree, treap, skip list, or scapegoat tree, 
+priority queues such as binary heap, leftist heap, 
+skew heap, binomial heap, Fibonacci heap, 
+or pairing heap, union find with various heuristics 
+(union by rank, path compression, path halving, path splitting).

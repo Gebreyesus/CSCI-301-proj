@@ -1,0 +1,141 @@
+#include "stdafx.h"
+#include "Binary_Search_Tree.h"
+#include <iostream>
+#include <cstdlib>
+#include <fstream>
+#include <iomanip>
+#include <locale>
+#include <cassert>
+using namespace std;
+//Name: Beteab Gebru
+//proj 10 - Concordance With a BST
+//Due Date : April 27 2017
+//CSCI 301: Section 02
+//CSCI ID : cs301154
+
+string Format_Word(string );
+string Get_Word(fstream &Reader);
+//====================================================================================================================
+int main()
+{
+	BST My_Tree;		    	//declared MyList- an instance of a linked list class
+	string Word ;	//Line stores a space delimited sequence of chars to be processed for linked list storage
+	int Word_Count = 0;	//counts total number of words
+	string files[3] = { "Text_1.txt", "Text_2.txt","Text_3.txt" };//3 test files are declared here
+	fstream Reader(files[1]);	//selecting test file to use out of the three available
+	char C ;
+
+	while (!Reader.eof())
+	{
+		Reader.get(C);
+		cout << "Character extracted-->" << C << endl;
+		if (isalpha(C))
+		{
+			//system("pause");
+			cout << "ALPHABET-->" << C << endl;
+			C = toupper(C);
+			Word = Word + C;
+		}
+		else //when encountering non alphabet we see if we have a complete word
+		{
+			cout << "NON-ALPHA-->" << C << endl;
+			cout << "Next - WORD----->" << Word << endl;
+			if (Word.length() > 8)
+				Word = Word.substr(0, 8);
+			if (!Word.empty()) 
+			{
+				My_Tree.Insert(Word);	
+				Word = "";//resseting the variable to store the next character
+				Word_Count++;
+			}
+		}
+	
+	}
+	//while (Word != "!")
+	//{
+	//	Word = Get_Word(Reader);//extract word from text
+	//	if (Word != "!")//word to be adeed to BST
+	//	{
+	//		My_Tree.Insert(Word);		//sending the word for storage in the linked list	
+	//		Word_Count++;
+	//	}
+	//}
+	
+	cout << "==================Finished reading from file=====================" << endl;
+//================================================================Output the tree data
+	system("pause");
+	cout << "Total number of words gathered from the text file -->" <<Word_Count<< endl;
+	cout << My_Tree << endl;			//Display tree data
+	system("pause");
+//================================================================End of Program
+	return 0;
+}
+//Extracts word fromtext ==============================================================================================
+string Get_Word(fstream &Reader)
+{
+	string Word=""; char C; int x = 0;
+	//while (!Reader.eof())				//using getline()
+	//{
+	//	getline(Reader, Word, ' ');		 //reading in a Word segment from the text file 
+	//	if (!Word.empty())//checks for empty lines
+	//	{
+	//		Word = Format_Word(Word);		//Word is formatted appropriately-->8 chars and all upper case
+	//		//cout << "::Word Extracted-->" << Word << endl;
+	//		size_t first = Word.find_first_not_of(' ');//trimming leading and trailing spaces
+	//		size_t last = Word.find_last_not_of(' ');
+	//		return Word.substr(first, (last - first + 1));
+	//	}
+	//}
+
+	//while (!Reader.eof())
+	//{
+	//	Reader.get(C);
+	//	//cout << "Character extracted-->" << C << endl;
+	//	if (isalpha(C))
+	//	{
+	//		cout << "ALPHABET-->" << C << endl;
+	//		//C = toupper(C);
+	//		Word = Word + C;
+	//		//x++;
+	//	}
+	//	else if (!isalpha(C))
+	//	{
+	//		cout << "NON-ALPHA-->" << C << endl;
+	//		//cout << "WORD------->" << Word << endl;
+	//		//x = 0;
+
+	//		//if (Word.length() > 8)
+	//		//	Word = Word.substr(0, 8);
+	//		
+	//		//return Word;
+	//	}
+	//	else 
+	//	{
+	//	//	Reader.close();
+	//	//	cout << "makes no sense" << endl;
+	//	}
+	//} 
+	
+	return "!";//indicating end of text text file
+}
+//Formatt Word=========================================================================================================
+string Format_Word(string A_Word)
+{//this function would format the Word to be max length of 8 characters and all in upper case for easy comparison
+	string Word = "        ";
+	int a = 0; int x = 0;
+	int Length = A_Word.length(); //the length of the string we read from text
+	Word = Word.substr(0, Length); //declaring string to store 8 characters
+	
+	while ((a < Length) && (a < 9))//iterating through the block of characters to find alphabets
+	{
+		if (isalnum(A_Word[a]))
+		{
+			Word[x] = A_Word[a];		  //FLEECING OUT A Word FROM THE Line
+			Word[x] = toupper(Word[x]);	//converting the characters to upper case
+			x++;
+		}
+		a++;
+	}
+	//cout << "Formatted item-->" << Word << "::" << "Length-->" << Word.length() << endl;
+	return Word;
+}

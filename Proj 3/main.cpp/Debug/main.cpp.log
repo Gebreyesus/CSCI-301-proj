@@ -1,0 +1,20 @@
+﻿  main.cpp.cpp
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(6): error C2008: '.': unexpected in macro definition
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(24): error C2065: 'List': undeclared identifier
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(24): error C2146: syntax error: missing ';' before identifier 'myArrayList'
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(24): error C2065: 'myArrayList': undeclared identifier
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(25): error C2065: 'myArrayList': undeclared identifier
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(25): error C2228: left of '.getLength' must have class/struct/union
+  c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(25): note: type is 'unknown-type'
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(26): error C2065: 'myArrayList': undeclared identifier
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(26): error C2228: left of '.isEmpty' must have class/struct/union
+  c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(26): note: type is 'unknown-type'
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(36): error C2065: 'myArrayList': undeclared identifier
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(36): error C2228: left of '.getLength' must have class/struct/union
+  c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(36): note: type is 'unknown-type'
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(41): error C2065: 'myArrayList': undeclared identifier
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(41): error C2228: left of '.insert' must have class/struct/union
+  c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(41): note: type is 'unknown-type'
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(45): error C2065: 'myArrayList': undeclared identifier
+c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(45): error C2228: left of '.retrieve' must have class/struct/union
+  c:\users\betea\desktop\pppppppppppppppppppp\main.cpp\main.cpp.cpp(45): note: type is 'unknown-type'

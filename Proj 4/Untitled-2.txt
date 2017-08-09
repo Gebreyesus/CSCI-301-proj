@@ -1,0 +1,88 @@
+//Name : Beteab Gebru
+//Class : CSCI301
+//Date : feb 21 2017
+//section 2
+//This programe will build concordance data on text file
+#include "stdafx.h"
+#include "Concordance.h"
+#include <cstdlib>
+#include <fstream>
+#include <iomanip>
+#include <string>
+#include <iostream>
+#include <string>
+#include <cassert>
+#include <locale>
+#include <sstream>
+#include<ctype.h>
+#include <conio.h>
+#include <vector>
+using namespace std;
+
+string lowershorter(string);	//protype for function that converts all letters to small caps and cuts it to 8 letters
+const int max = 8; 
+//=============================================================================================================================main function
+int main()
+  {
+		ifstream reader("input.txt");						//reader reads from file abc.txt 
+		ofstream writer("output.txt");					//writer writes to file output.txt
+		string line;
+		vector<string> mywords;		//stores all the List in full 
+
+		if (!reader)//if reader fails to read file
+		{
+			cout << "couldnt open file; consider checking the file name and locate it in solution folder" << endl;
+			//system("pause");//debugging purposes
+			_getch();
+			return 0;
+		}
+	while (!reader.eof())		//continue while reader hasnt reached end of line
+	{//system("pause");//for debuging purposes
+			reader >> line;			//capture a line from file until line fails anouncing the end of file
+			mywords.push_back(line);	//extracts all List from line and stores it 
+			
+	}
+		cout << "List Of Words" << endl;
+		int Twords = mywords.size();
+		string wordarr[1000];		//string array with spaces for 1000 List
+	
+		for (int i = 0; i < Twords; i++)
+		{
+			string temp;
+				cout << mywords[i] << "(" << i << ")" << "+++++" << wordarr[i]<<endl;
+			wordarr[i] = mywords[i];;
+		}	
+		
+cout << "==========================" << "entering words into linked list" <<"========================" << endl;
+system("pause"); //for debuging purposes 
+
+		List concordance1; //concordance declared as an instance of list
+		int n = 0;
+		while (n < Twords)
+		{
+			concordance1.insert(wordarr[n]);
+		}
+
+		
+
+	return 0;
+ }
+
+
+
+
+
+
+//==========================================================================================================================functions
+	string lowershorter(string long_word)
+	{//this function cuts the string to 8 characters or less and returns the short version
+		string temp;//will store the desirable word to be stored in the list
+		for (int  i = 0; i <= long_word.length(); i++)
+		{
+			temp[i]= tolower(long_word[i]);
+			long_word[i]=temp[i];		//puta all letters into small caps
+			while (i < 8 && long_word.length()>8)
+					temp[i] = long_word[i];// storing only first 8 letters of any word sent
+		}
+		return temp;
+	}

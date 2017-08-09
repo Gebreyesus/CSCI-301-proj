@@ -1,0 +1,8 @@
+﻿  Proj_10_BST.cpp
+c:\users\betea\desktop\csci 301 proj\proj 10\proj_10_bst\proj_10_bst.cpp(63): warning C4018: '<': signed/unsigned mismatch
+  BST_IMPLEMENTATION.cpp
+c:\users\betea\desktop\csci 301 proj\proj 10\proj_10_bst\bst_implementation.cpp(54): warning C4390: ';': empty controlled statement found; is this the intent?
+  Generating Code...
+c:\users\betea\desktop\csci 301 proj\proj 10\proj_10_bst\bst_implementation.cpp(49): warning C4715: 'BST::Present': not all control paths return a value
+  Proj_10_BST.vcxproj -> C:\Users\betea\Desktop\CSCI 301 proj\Proj 10\Proj_10_BST\Debug\Proj_10_BST.exe
+  Proj_10_BST.vcxproj -> C:\Users\betea\Desktop\CSCI 301 proj\Proj 10\Proj_10_BST\Debug\Proj_10_BST.pdb (Full PDB)
